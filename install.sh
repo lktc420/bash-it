@@ -96,3 +96,10 @@ do
     esac
   done
 done
+
+for rc in $BASH_IT/rc/*; do
+  if [ ! -d "$rc" ]; then
+    echo "linking $rc ..."
+    ln -sf $rc $HOME_ABS/.`basename $rc`
+  fi
+done

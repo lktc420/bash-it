@@ -1,0 +1,49 @@
+set nocp
+set ru
+set hls
+syntax on
+set backspace=indent,eol,start
+set whichwrap=b,s,h,l,<,>,[,]
+filetype plugin indent on
+
+set sw=4
+set ts=4
+set et
+set smarttab
+
+if has('gui_running')
+  set background=dark
+  colorscheme base16-eighties
+else
+  " something for console Vim
+endif
+
+"set background=dark
+"colorscheme base16-eighties
+"let base16colorspace=256  " Access colors present in 256 colorspace
+
+set cin
+set cino=:0g0t0
+set autoindent
+"set mouse=a
+
+set nu
+nmap <F8> :set number! number?<CR>
+
+nmap <F9> :set invpaste paste?<CR>
+set pastetoggle=<F9>
+set showmode
+
+"set t_ti= t_te=
+
+nmap gp :bp<cr>
+nmap gn :bn<cr>
+nmap gj <C-W>j
+nmap gk <C-W>k
+nmap gh <C-W>h
+nmap gl <C-W>l
+
+imap jj <Esc>
+map <Space> :
+
+":autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
