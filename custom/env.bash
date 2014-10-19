@@ -1,11 +1,11 @@
 if [ $(uname) = "Darwin" ]; then
-    export HOME_ABS="/Users/zanmato"
-else if [ $(uname) = "Linux" ]; then
-    export HOME_ABS="/home/ruoxi"
+    export HOME_ABS=/Users/zanmato
+elif [ $(uname) = "Linux" ]; then
+    export HOME_ABS=/home/ruoxi
 fi
 if [ $(uname) = "Darwin" ]; then
     export DEVROOT=$HOME_ABS/git
-else if [ $(uname) = "Linux" ]; then
+elif [ $(uname) = "Linux" ]; then
     export DEVROOT=$HOME_ABS/dev
 fi
 export JAVA_HOME=/usr/lib/jvm/java-6-oracle
@@ -22,3 +22,6 @@ export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 
 export SVN_HIVE_BRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
 export SVN_HIVE_TRUNK=https://172.16.1.168/transwarp/trunk/hadoop/sources/hive-0.12.0-transwarp
+
+export EDITOR='vi'
+export GIT_EDITOR='vi'
