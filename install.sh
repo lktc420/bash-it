@@ -103,3 +103,5 @@ for rc in $BASH_IT/rc/*; do
     ln -sf $rc $HOME_ABS/.`basename $rc`
   fi
 done
+
+ln -sf $BASH_IT/rc/vimrc $HOME_ABS/.ideavimrc
