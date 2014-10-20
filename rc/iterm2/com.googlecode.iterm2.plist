@@ -81,13 +81,13 @@
 	<key>LeftOption</key>
 	<integer>7</integer>
 	<key>LoadPrefsFromCustomFolder</key>
-	<false/>
+	<true/>
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
+	<string>~/plist</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -123,9 +123,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>1791 204 924 485 1440 -180 1920 1057 </string>
+	<string>1475 18 924 485 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 -174 1915 1051 1440 -180 1920 1057 </string>
+	<string>1900 181 585 451 1440 -180 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 68 585 473 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_40E262F2-2029-4699-B8E3-11FE60C56E79</key>
@@ -837,6 +837,13 @@
 					<key>Text</key>
 					<string></string>
 				</dict>
+				<key>0xf746-0x20000</key>
+				<dict>
+					<key>Action</key>
+					<integer>25</integer>
+					<key>Text</key>
+					<string>Paste</string>
+				</dict>
 			</dict>
 			<key>Log Directory</key>
 			<string></string>
@@ -845,7 +852,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Default</string>
+			<string>iTerm</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 12</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -1026,6 +1033,8 @@
 			<string>/Users/zanmato</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1072,7 +1081,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string></string>
+	<string>/Users/zanmato/.bash_it/rc/iterm2</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
