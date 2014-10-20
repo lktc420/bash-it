@@ -1,3 +1,0 @@
-#set editing-mode emacs
-#jline.internal.Log.debug=false
-#jline.internal.Log.trace=false
