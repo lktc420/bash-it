@@ -18,6 +18,7 @@ alias updtrp='$SCRIPT_HOME/update_repo.sh'
 
 # Locations
 alias gdev='cd $DEVROOT'
+alias gbsht='cd $BASH_IT'
 alias ghv='cd $DEVROOT/$HIVEROOT/src'
 alias gngmr='cd $DEVROOT/ngmr-1.7-transwarp'
 
