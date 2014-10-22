@@ -27,22 +27,23 @@ alias tls='tmux ls'
 alias tat='tmux a -t' 
 alias tns='tmux new-session -s'
 
-alias msql='mysql -uroot -pwarp123'
+alias msql='mysql -uroot -pwarp123 hive_metastore'
 alias trswp='transwarp -N'
 alias hbase='/usr/lib/hbase/bin/hbase shell'
 
 alias thive='$SCRIPT_HOME/hive.tmux.sh'
 
+alias rbdhv='ant clean package'
 alias rbdngmr='cd spark; sbt/sbt clean; cd ..; cd shark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; ./compile.sh shark'
 
 if [ $(uname) = "Darwin" ]; then
-    alias clipcpy='tr -d '\n' | pbcopy'
+    alias clipcpy='tr -d "\n" | pbcopy'
     alias clippst='pbpaste'
-    alias selcpy='tr -d '\n' | pbcopy'
+    alias selcpy='tr -d "\n" | pbcopy'
     alias selpst='pbpaste'
 elif [ $(uname) = "Linux" ]; then
-    alias clipcpy='tr -d '\n' | xsel -b'
+    alias clipcpy='tr -d "\n" | xsel -b'
     alias clippst='xsel -b -o'
-    alias selcpy='tr -d '\n' | xsel'
+    alias selcpy='tr -d "\n" | xsel'
     alias selpst='xsel -o'
 fi

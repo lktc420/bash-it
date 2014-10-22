@@ -2,6 +2,7 @@ cluster=(172.16.1.81 172.16.1.82 172.16.1.83 172.16.1.84)
 #srcs=("/usr/lib/hive/lib/jline-2.12.jar" "/usr/lib/ngmr/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar" "/usr/lib/ngmr-shell/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar")
 srcs=("/usr/lib/hive/lib/hive-*transwarp.jar" "/usr/lib/ngmr/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar" "/usr/lib/ngmr-shell/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar")
 dsts=("/usr/lib/hive/lib/" "/usr/lib/ngmr/core/target/scala-2.10/" "/usr/lib/ngmr-shell/target/scala-2.10/")
+#dsts=("/root/ruoxi/hive/" "/root/ruoxi/ngmr/" "/root/ruoxi/ngmr-shell/")
 
 if [ "$1" == "hive" ];then
   indexes=(0)

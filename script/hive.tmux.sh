@@ -13,7 +13,7 @@ tmux new-window -n sql
 tmux send-keys 'ghv' 'C-m' 'cd sqlUnitTest' 'C-m'
 
 tmux new-window -n mysql
-tmux send-keys 'su' 'C-m'
+tmux send-keys 'msql' 'C-m'
 
 # tmux new-window -n hadoop
 # tmux send-keys 'ghdp' 'C-m'
