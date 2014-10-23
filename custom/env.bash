@@ -1,7 +1,9 @@
 if [ $(uname) = "Darwin" ]; then
     export HOME_ABS=/Users/zanmato
+    export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 elif [ $(uname) = "Linux" ]; then
     export HOME_ABS=/home/ruoxi
+    export JAVA_HOME=/usr/lib/jvm/java-6-oracle
 fi
 if [ $(uname) = "Darwin" ]; then
     export DEVROOT=$HOME_ABS/git
@@ -10,7 +12,6 @@ elif [ $(uname) = "Linux" ]; then
 fi
 export SCRIPT_HOME=$BASH_IT/script
 export CONF_HOME=$BASH_IT/conf
-export JAVA_HOME=/usr/lib/jvm/java-6-oracle
 export SCALA_HOME=/usr/lib/scala-2.11.1
 export PATH=$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$HIVE_HOME/bin:/usr/lib/hadoop/bin:/usr/lib/hadoop-hdfs/bin:$PATH
 export HADOOP_HOME=/usr/lib/hadoop
