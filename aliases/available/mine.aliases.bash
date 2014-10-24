@@ -52,7 +52,7 @@ alias tls='tmux ls'
 alias tat='tmux a -t' 
 alias tns='tmux new-session -s'
 
-alias msql='mysql -uroot -pwarp123 hive_metastore'
+alias msql='mysql -uroot -ppassword hive_metastore'
 alias trswp='transwarp -N'
 alias hbase='/usr/lib/hbase/bin/hbase shell'
 
