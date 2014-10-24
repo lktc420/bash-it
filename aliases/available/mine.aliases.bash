@@ -31,6 +31,7 @@ export GIT_EDITOR='vi'
 alias sudo='sudo -E '
 
 alias smst='$SCRIPT_HOME/start_metastore.sh'
+alias scldr='$SCRIPT_HOME/start_clidriver.sh'
 alias sall='$SCRIPT_HOME/start_all.sh'
 
 alias insthv='$SCRIPT_HOME/install_hive.sh'
@@ -52,6 +53,7 @@ alias tls='tmux ls'
 alias tat='tmux a -t' 
 alias tns='tmux new-session -s'
 
+alias msqld='mysqld_safe &'
 alias msql='mysql -uroot -ppassword hive_metastore'
 alias trswp='transwarp -N'
 alias hbase='/usr/lib/hbase/bin/hbase shell'

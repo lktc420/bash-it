@@ -30,7 +30,7 @@
 </property>
 <property>
     <name>hive.jar.path</name>
-    <value>/usr/lib/hive/lib/hive-exec-0.12.0-transwarp.jar</value>   
+    <value>/Users/zanmato/git/hive-0.12.0-transwarp/src/build/dist/lib/hive-exec-0.12.0-transwarp.jar</value>   
 </property>
 
 <!-- Hive Execution Parameters -->

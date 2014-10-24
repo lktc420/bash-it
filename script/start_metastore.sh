@@ -2,32 +2,32 @@
 
 CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/mysql-connector-java.jar
 CLASSPATH=$CLASSPATH:$CONF_HOME
-CLASSPATH=$CLASSPATH:/usr/lib/hbase/conf
 
-for dir in $DEVROOT/$HIVEROOT/src/build/dist/lib
-do
-    for file in `ls $dir`
-    do
-        CLASSPATH=$CLASSPATH:$dir/$file
+#Promote slf4j1.7.5
+for jar in `find $DEVROOT/$HIVEROOT/src/build/dist/lib -name 'slf4j*jar'`; do
+
+    CLASSPATH+=:$jar
+done
+
+function find_without_slf4j ()
+{
+    find $* -name "*.jar" | grep -v "[^-]slf4j"
+}
+
+paths=(
+$DEVROOT/$HIVEROOT/src/build/dist/lib
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.20S.shim 
+)
+
+for path in ${paths[@]}; do
+    for jar in `find_without_slf4j $path`; do
+        CLASSPATH+=:$jar
     done
 done
 
-for dir in $DEVROOT/$HIVEROOT/src/build/ivy/lib
-do
-    for file in `ls $dir`
-    do
-        CLASSPATH=$CLASSPATH:$dir/$file
-    done
-done
+#echo $CLASSPATH;
 
-for dir in $DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.20.shim
-do
-    for file in `ls $dir`
-    do
-        CLASSPATH=$CLASSPATH:$dir/$file
-    done
-done
+$JAVA_HOME/bin/java -Dlog4j.configuration=file://$CONF_HOME/hive-log4j.properties -cp $CLASSPATH org.apache.hadoop.hive.metastore.HiveMetaStore &
 
-# echo $CLASSPATH ;
-
-$JAVA_HOME/bin/java  -Xmx256m -Dlog4j.configuration=file://$CONF_HOME/hive-log4j.properties -Djava.library.path=$DEVROOT/$HIVEROOT/src/build/dist/lib -cp $CLASSPATH org.apache.hadoop.hive.metastore.HiveMetaStore &
+echo "Metastore started."
