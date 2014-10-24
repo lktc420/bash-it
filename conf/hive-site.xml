@@ -190,7 +190,7 @@
 <property>
   <name>javax.jdo.option.ConnectionPassword</name>
   <!--  <value>mine</value> -->
-  <value>warp123</value>
+  <value>password</value>
   <description>password to use against metastore database</description>
 </property>
 
