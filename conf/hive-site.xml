@@ -33,18 +33,6 @@
     <value>/usr/lib/hive/lib/hive-exec-0.12.0-transwarp.jar</value>   
 </property>
 
-<property>
-  <name>hive.vectorized.execution.enabled</name>
-  <value>true</value>
-</property>
-
-<!--
-<property>
-  <name>hive.metastore.local</name>
-  <value>true</value>
-</property>
--->
-
 <!-- Hive Execution Parameters -->
 <property>
   <name>mapred.reduce.tasks</name>
@@ -73,7 +61,7 @@
 
 <property>
   <name>hive.cli.print.header</name>
-  <value>false</value>
+  <value>true</value>
   <description>Whether to print the names of the columns in query output.</description>
 </property>
 
