@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/shark"
 NGMR_HOME="$DEVROOT/ngmr-1.7-transwarp/spark"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/mysql-connector-java.jar
 CLASSPATH=$CLASSPATH:$CONF_HOME
