@@ -61,4 +61,5 @@ alias hbase='/usr/lib/hbase/bin/hbase shell'
 alias thive='$SCRIPT_HOME/hive.tmux.sh'
 
 alias rbdhv='ant clean package'
+alias rbdshk='cd shark; sbt/sbt clean; cd ..; ./compile.sh shark'
 alias rbdngmr='cd spark; sbt/sbt clean; cd ..; cd shark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; ./compile.sh shark'
