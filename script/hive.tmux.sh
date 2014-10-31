@@ -7,13 +7,16 @@ tmux new-window -n ngmr
 tmux send-keys 'gngmr' 'C-m'
 
 tmux new-window -n run
-# tmux send-keys 'ghv' 'C-m' 'cd build/dist' 'C-m'
+tmux split-window -v
 
 tmux new-window -n sql
 tmux send-keys 'ghv' 'C-m' 'cd sqlUnitTest' 'C-m'
 
 tmux new-window -n mysql
 tmux send-keys 'msql' 'C-m'
+
+tmux new-window -n bash-it
+tmux send-keys 'gbsht' 'C-m'
 
 # tmux new-window -n hadoop
 # tmux send-keys 'ghdp' 'C-m'
