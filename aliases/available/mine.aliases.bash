@@ -7,7 +7,7 @@ elif [ $(uname) = "Linux" ]; then
     export HOME_ABS=/home/ruoxi
     export DEVROOT=$HOME_ABS/dev
     export JAVA_HOME=/usr/lib/jvm/java-6-oracle
-    export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+    # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 fi
 export SCRIPT_HOME=$BASH_IT/script
 export CONF_HOME=$BASH_IT/conf
