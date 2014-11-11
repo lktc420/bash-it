@@ -49,6 +49,7 @@ alias ghv='cd $DEVROOT/$HIVEROOT/src'
 alias gngmr='cd $DEVROOT/ngmr-1.7-transwarp'
 
 # Commands
+alias tmux='tmux -2' 
 alias tls='tmux ls' 
 alias tat='tmux a -t' 
 alias tns='tmux new-session -s'
