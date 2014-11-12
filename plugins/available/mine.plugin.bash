@@ -68,7 +68,7 @@ function selfp ()
     param '1: file name'
     group 'mine'
     fp $* | selcpy
-    echo "`selpst` copied to clipboard."
+    echo "`selpst` copied to select"
 }
 
 function pk ()

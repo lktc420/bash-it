@@ -36,7 +36,7 @@ alias sall='$SCRIPT_HOME/start_all.sh'
 
 alias insthv='$SCRIPT_HOME/install_hive.sh'
 alias instspk='$SCRIPT_HOME/install_spark.sh'
-alias instshk='$SCRIPT_HOME/install_shark.sh'
+alias insticpt='$SCRIPT_HOME/install_inceptor.sh'
 alias scpinst='$SCRIPT_HOME/scp_install.sh'
 
 alias updtrp='$SCRIPT_HOME/update_repo.sh'
@@ -49,6 +49,7 @@ alias ghv='cd $DEVROOT/$HIVEROOT/src'
 alias gngmr='cd $DEVROOT/ngmr-1.7-transwarp'
 
 # Commands
+alias tmux='tmux -2' 
 alias tls='tmux ls' 
 alias tat='tmux a -t' 
 alias tns='tmux new-session -s'
@@ -61,5 +62,5 @@ alias hbase='/usr/lib/hbase/bin/hbase shell'
 alias thive='$SCRIPT_HOME/hive.tmux.sh'
 
 alias rbdhv='ant clean package'
-alias rbdshk='cd shark; sbt/sbt clean; cd ..; ./compile.sh shark'
-alias rbdngmr='cd spark; sbt/sbt clean; cd ..; cd shark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; ./compile.sh shark'
+alias rbdicpt='cd inceptor; sbt/sbt clean; cd ..; ./compile.sh inceptor'
+alias rbdngmr='cd spark; sbt/sbt clean; cd ..; cd inceptor; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; ./compile.sh inceptor'
