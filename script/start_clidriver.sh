@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/shark"
+NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/inceptor"
 NGMR_HOME="$DEVROOT/ngmr-1.7-transwarp/spark"
 
 CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/mysql-connector-java.jar

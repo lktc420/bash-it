@@ -8,7 +8,7 @@ if [ "$1" == "hive" ];then
   indexes=(0)
 elif [ "$1" == "spark" ];then
   indexes=(1)
-elif [ "$1" == "shark" ]; then
+elif [ "$1" == "inceptor" ]; then
   indexes=(2)
 elif [ "$1" == "all" ]; then
   indexes=(0 1 2)
