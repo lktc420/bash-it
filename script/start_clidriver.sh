@@ -1,36 +1,39 @@
 #!/bin/bash
 
+function find_without_slf4j ()
+{
+    find $* -name "*.jar" | grep -v "[^-]slf4j"
+}
+
 NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/inceptor"
 NGMR_HOME="$DEVROOT/ngmr-1.7-transwarp/spark"
+INCEPTOR_HOME="$DEVROOT/inceptor"
 
-CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/mysql-connector-java.jar
-CLASSPATH=$CLASSPATH:/usr/lib/hbase/hbase-0.94.11-transwarp.jar
+CLASSPATH=$CLASSPATH:/usr/lib/hbase
 CLASSPATH=$CLASSPATH:$CONF_HOME
 
-#Promote asm4.0
-for jar in `find $NGMR_SHELL_HOME/lib_managed -name 'asm*4.0*jar'`; do
-    CLASSPATH+=:$jar
-done
+if [ $(uname) = "Darwin" ]; then
+    MYSQL_CONNECTOR=$INCEPTOR_HOME/lib/mac
+elif [ $(uname) = "Linux" ]; then
+    MYSQL_CONNECTOR=$INCEPTOR_HOME/lib/ubuntu
+fi 
 
 #Promote slf4j1.7.5
 for jar in `find $NGMR_SHELL_HOME/lib_managed -name 'slf4j*1.7.5*jar'`; do
     CLASSPATH+=:$jar
 done
 
-function find_without_slf4j ()
-{
-    find $* -name "*.jar" | grep -v "[^-]slf4j"
-}
-
 paths=(
-$DEVROOT/$HIVEROOT/src/build/dist/lib
-$DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
-$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.20S.shim 
+$MYSQL_CONNCTOR
+$INCEPTOR_HOME/lib
 $NGMR_SHELL_HOME/lib
 $NGMR_SHELL_HOME/lib_managed 
 $NGMR_HOME/core/target
 $NGMR_HOME/lib_managed 
 $NGMR_SHELL_HOME/target
+$DEVROOT/$HIVEROOT/src/build/dist/lib
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.20S.shim 
 )
 
 for path in ${paths[@]}; do
