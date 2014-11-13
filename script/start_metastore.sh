@@ -1,23 +1,30 @@
 #!/bin/bash
 
-CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/mysql-connector-java.jar
-CLASSPATH=$CLASSPATH:$CONF_HOME
+source $BASH_IT/script/util.sh
+
+INCEPTOR_HOME="$DEVROOT/inceptor"
+
+CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
+
+if [ $(uname) = "Darwin" ]; then
+    MYSQL_CONNECTOR=$INCEPTOR_HOME/lib/mac
+elif [ $(uname) = "Linux" ]; then
+    MYSQL_CONNECTOR=$INCEPTOR_HOME/lib/ubuntu
+fi
+
+echo $MYSQL_CONNECTOR
 
 #Promote slf4j1.7.5
 for jar in `find $DEVROOT/$HIVEROOT/src/build/dist/lib -name 'slf4j*jar'`; do
-
     CLASSPATH+=:$jar
 done
 
-function find_without_slf4j ()
-{
-    find $* -name "*.jar" | grep -v "[^-]slf4j"
-}
-
 paths=(
+$MYSQL_CONNCTOR
+$INCEPTOR_HOME/lib
 $DEVROOT/$HIVEROOT/src/build/dist/lib
 $DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
-$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.20S.shim 
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.23.shim 
 )
 
 for path in ${paths[@]}; do
@@ -28,6 +35,6 @@ done
 
 #echo $CLASSPATH;
 
-$JAVA_HOME/bin/java -Dlog4j.configuration=file://$CONF_HOME/hive-log4j.properties -cp $CLASSPATH org.apache.hadoop.hive.metastore.HiveMetaStore &
+$JAVA_HOME/bin/java -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -cp $CLASSPATH org.apache.hadoop.hive.metastore.HiveMetaStore &
 
 echo "Metastore started."

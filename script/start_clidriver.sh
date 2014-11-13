@@ -1,9 +1,6 @@
 #!/bin/bash
 
-function find_without_slf4j ()
-{
-    find $* -name "*.jar" | grep -v "[^-]slf4j"
-}
+source $BASH_IT/script/util.sh
 
 NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/inceptor"
 NGMR_HOME="$DEVROOT/ngmr-1.7-transwarp/spark"
@@ -33,7 +30,7 @@ $NGMR_HOME/lib_managed
 $NGMR_SHELL_HOME/target
 $DEVROOT/$HIVEROOT/src/build/dist/lib
 $DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
-$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.20S.shim 
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.23.shim 
 )
 
 for path in ${paths[@]}; do
