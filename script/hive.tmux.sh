@@ -18,6 +18,9 @@ tmux send-keys 'msql' 'C-m'
 tmux new-window -n bash-it
 tmux send-keys 'gbsht' 'C-m'
 
+tmux new-window -n inceptor
+tmux send-keys 'gdev; cd inceptor' 'C-m'
+
 # tmux new-window -n hadoop
 # tmux send-keys 'ghdp' 'C-m'
 # 

@@ -12,8 +12,6 @@ elif [ $(uname) = "Linux" ]; then
     MYSQL_CONNECTOR=$INCEPTOR_HOME/lib/ubuntu
 fi
 
-echo $MYSQL_CONNECTOR
-
 #Promote slf4j1.7.5
 for jar in `find $DEVROOT/$HIVEROOT/src/build/dist/lib -name 'slf4j*jar'`; do
     CLASSPATH+=:$jar
