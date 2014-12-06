@@ -1,5 +1,5 @@
 cluster=(172.16.1.81 172.16.1.82 172.16.1.83 172.16.1.84)
-srcs=("/usr/lib/hive/lib/hive-*transwarp.jar" "/usr/lib/ngmr/core/target/scala-2.10/ngmr-core_2.10-1.1.0-transwarp.jar" "/usr/lib/ngmr-shell/target/scala-2.10/ngmr-shell_2.10-1.1.0-transwarp.jar")
+srcs=("/usr/lib/hive/lib/hive-*.jar" "/usr/lib/ngmr/core/target/scala-2.10/ngmr-core_2.10-1.1.0-transwarp.jar" "/usr/lib/ngmr-shell/target/scala-2.10/ngmr-shell_2.10-1.1.0-transwarp.jar")
 dsts=("/usr/lib/hive/lib/" "/usr/lib/ngmr/core/target/scala-2.10/" "/usr/lib/ngmr-shell/target/scala-2.10/")
 
 if [ "$1" == "hive" ];then
