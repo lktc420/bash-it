@@ -42,4 +42,4 @@ done
 #echo $CLASSPATH;
 
 #$JAVA_HOME/bin/java -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70  -Djava.library.path="$DEVROOT/$HIVEROOT/src/build/dist/lib" -cp $CLASSPATH org.apache.hive.beeline.BeeLine -u jdbc:hive2://172.16.2.210:10000 -n np -p ""
-$JAVA_HOME/bin/java -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70  -Djava.library.path="$DEVROOT/$HIVEROOT/src/build/dist/lib" -cp $CLASSPATH org.apache.hadoop.hive.cli.CliDriver -N
+$JAVA_HOME/bin/java -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70  -Djava.library.path="$DEVROOT/$HIVEROOT/src/build/dist/lib" -cp $CLASSPATH org.apache.hadoop.hive.cli.CliDriver -N $@
