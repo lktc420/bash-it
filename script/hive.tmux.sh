@@ -13,7 +13,11 @@ tmux new-window -n sql
 tmux send-keys 'ghv' 'C-m' 'cd sqlUnitTest' 'C-m'
 
 tmux new-window -n inceptor
+if [ "$TDH_VERSION" = "3.4" ]; then
+tmux send-keys 'gdev; cd shark' 'C-m'
+else
 tmux send-keys 'gdev; cd inceptor' 'C-m'
+fi
 
 tmux new-window -n mysql
 tmux send-keys 'msql' 'C-m'

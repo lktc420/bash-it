@@ -26,9 +26,12 @@ export SVN_HIVE_TRUNK=https://172.16.1.168/transwarp/trunk/hadoop/sources/hive-0
 export EDITOR='vi'
 export GIT_EDITOR='vi'
 
-# Scripts
 alias sudo='sudo -E '
 
+# Exports
+alias tdh34='export TDH_VERSION=3.4'
+
+# Scripts
 alias smst='$SCRIPT_HOME/start_metastore.sh'
 alias scldr='$SCRIPT_HOME/start_clidriver.sh'
 alias sall='$SCRIPT_HOME/start_all.sh'

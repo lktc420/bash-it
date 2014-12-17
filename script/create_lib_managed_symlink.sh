@@ -1,7 +1,12 @@
 #!/bin/bash
 
 rm -rf inceptor_lib_managed > /dev/null 2>&1
-NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/inceptor"
+
+if [ "$TDH_VERSION" = "3.4" ]; then
+  NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/shark"
+else
+  NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/inceptor"
+fi
 
 mkdir inceptor_lib_managed
 

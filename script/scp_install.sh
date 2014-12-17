@@ -1,6 +1,11 @@
 cluster=(172.16.1.81 172.16.1.82 172.16.1.83 172.16.1.84)
-srcs=("/usr/lib/hive/lib/hive-*.jar" "/usr/lib/ngmr/core/target/scala-2.10/ngmr-core_2.10-1.1.0-transwarp.jar" "/usr/lib/ngmr-shell/target/scala-2.10/ngmr-shell_2.10-1.1.0-transwarp.jar")
-dsts=("/usr/lib/hive/lib/" "/usr/lib/ngmr/core/target/scala-2.10/" "/usr/lib/ngmr-shell/target/scala-2.10/")
+if [ "$TDH_VERSION" = "3.4" ]; then
+  srcs=("/usr/lib/hive/lib/hive-*.jar" "/usr/lib/ngmr/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar" "/usr/lib/ngmr-shell/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar")
+  dsts=("/usr/lib/hive/lib/" "/usr/lib/ngmr/core/target/scala-2.10/" "/usr/lib/ngmr-shell/target/scala-2.10/")
+else
+  srcs=("/usr/lib/hive/lib/hive-*.jar" "/usr/lib/ngmr/core/target/scala-2.10/ngmr-core_2.10-1.1.0-transwarp.jar" "/usr/lib/ngmr-shell/target/scala-2.10/ngmr-shell_2.10-1.1.0-transwarp.jar")
+  dsts=("/usr/lib/hive/lib/" "/usr/lib/ngmr/core/target/scala-2.10/" "/usr/lib/ngmr-shell/target/scala-2.10/")
+fi
 
 if [ "$1" == "hive" ];then
   indexes=(0)
