@@ -30,6 +30,7 @@ alias sudo='sudo -E '
 
 # Exports
 alias tdh34='export TDH_VERSION=3.4'
+alias tdh40='export TDH_VERSION=4.0'
 
 # Scripts
 alias smst='$SCRIPT_HOME/start_metastore.sh'
