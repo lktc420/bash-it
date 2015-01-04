@@ -26,10 +26,11 @@ done
 
 paths=(
 $MYSQL_CONNCTOR
-$INCEPTOR_HOME/lib
 $NGMR_SHELL_HOME/lib
 $NGMR_SHELL_HOME/lib_managed 
 $NGMR_HOME/core/target
+$NGMR_HOME/holodesk/target
+$NGMR_HOME/streaming/target
 $NGMR_HOME/lib_managed 
 $NGMR_SHELL_HOME/target
 $DEVROOT/$HIVEROOT/src/build/dist/lib
@@ -45,4 +46,4 @@ done
 
 #echo $CLASSPATH;
 
-$JAVA_HOME/bin/java $HADOOP_OPTS -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -Djava.library.path="$DEVROOT/$HIVEROOT/src/build/dist/lib" -cp $CLASSPATH org.apache.hadoop.hive.cli.CliDriver -N $@
+$JAVA_HOME/bin/java $HADOOP_OPTS -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -Xmx4096m -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -Djava.library.path="$DEVROOT/$HIVEROOT/src/build/dist/lib" -cp $CLASSPATH org.apache.hadoop.hive.cli.CliDriver -N $@
