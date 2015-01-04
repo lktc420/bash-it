@@ -19,7 +19,6 @@ done
 
 paths=(
 $MYSQL_CONNCTOR
-$INCEPTOR_HOME/lib
 $DEVROOT/$HIVEROOT/src/build/dist/lib
 $DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
 $DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.23.shim 
