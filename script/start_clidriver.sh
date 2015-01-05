@@ -25,7 +25,7 @@ for jar in `find $NGMR_SHELL_HOME/lib_managed -name 'slf4j*1.7.5*jar'`; do
 done
 
 paths=(
-$MYSQL_CONNCTOR
+$MYSQL_CONNECTOR
 $NGMR_SHELL_HOME/lib
 $NGMR_SHELL_HOME/lib_managed 
 $NGMR_HOME/core/target

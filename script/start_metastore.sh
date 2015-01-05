@@ -18,7 +18,7 @@ for jar in `find $DEVROOT/$HIVEROOT/src/build/dist/lib -name 'slf4j*jar'`; do
 done
 
 paths=(
-$MYSQL_CONNCTOR
+$MYSQL_CONNECTOR
 $DEVROOT/$HIVEROOT/src/build/dist/lib
 $DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
 $DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.23.shim 
