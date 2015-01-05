@@ -6,8 +6,8 @@ set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 filetype plugin indent on
 
-set sw=4
-set ts=4
+set sw=2
+set ts=2
 set et
 set smarttab
 
