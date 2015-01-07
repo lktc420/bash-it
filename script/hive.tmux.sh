@@ -6,11 +6,11 @@ tmux send-keys 'ghv' 'C-m'
 tmux new-window -n ngmr
 tmux send-keys 'gngmr' 'C-m'
 
-tmux new-window -n run
-tmux split-window -v
-
 tmux new-window -n sql
 tmux send-keys 'ghv' 'C-m' 'cd sqlUnitTest' 'C-m'
+
+tmux new-window -n run
+tmux split-window -v
 
 tmux new-window -n inceptor
 if [ "$TDH_VERSION" = "3.4" ]; then
