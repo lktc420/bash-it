@@ -13,15 +13,13 @@ elif [ $(uname) = "Linux" ]; then
 fi
 
 #Promote slf4j1.7.5
-for jar in `find $DEVROOT/$HIVEROOT/src/build/dist/lib -name 'slf4j*jar'`; do
+for jar in `find $DEVROOT/ngmr-1.7-transwarp/inceptor/lib_managed -name 'slf4j*jar'`; do
     CLASSPATH+=:$jar
 done
 
 paths=(
+$DEVROOT/ngmr-1.7-transwarp/inceptor/lib_managed
 $MYSQL_CONNECTOR
-$DEVROOT/$HIVEROOT/src/build/dist/lib
-$DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
-$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.23.shim 
 )
 
 for path in ${paths[@]}; do

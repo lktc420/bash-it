@@ -16,7 +16,6 @@ export HADOOP_HOME=/usr/lib/hadoop
 export HADOOP_LIBEXEC_DIR=$HADOOP_HOME/libexec
 export HIVE_HOME=/usr/lib/hive
 export HIVEROOT=hive-0.12.0-transwarp
-#export HIVEROOT=WARP-1019-hive-0.12.0-transwarp
 export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 
@@ -64,6 +63,8 @@ alias hbase='/usr/lib/hbase/bin/hbase shell'
 
 alias thive='$SCRIPT_HOME/hive.tmux.sh'
 
-alias rbdhv='ant clean package'
-alias rbdicpt='cd inceptor; sbt/sbt clean; cd ..; ./compile.sh inceptor'
-alias rbdngmr='cd spark; sbt/sbt clean; cd ..; cd inceptor; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; ./compile.sh inceptor'
+alias bdhv='mvn install -DskipTests'
+alias rbdhv='mvn clean install -DskipTests'
+alias bdicpt='cd inceptor; sbt/sbt package; cd ..'
+alias rbdicpt='cd inceptor; sbt/sbt clean package; cd ..'
+alias rbdngmr='cd spark; sbt/sbt clean publish_local; cd ../inceptor; sbt/sbt clean package; cd ..'
