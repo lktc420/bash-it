@@ -3,6 +3,7 @@ if [ $(uname) = "Darwin" ]; then
     export HOME_ABS=/Users/zanmato
     export DEVROOT=$HOME_ABS/git
     export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+    export MAVEN_OPTS="-Xms1024m -Xmx2048m"
 elif [ $(uname) = "Linux" ]; then
     export HOME_ABS=/home/ruoxi
     export DEVROOT=$HOME_ABS/dev
