@@ -60,6 +60,8 @@ alias hbase='/usr/lib/hbase/bin/hbase shell'
 
 alias thive='$SCRIPT_HOME/hive.tmux.sh'
 
+alias rbdgrm='mvn clean compile 2>&1 | tee ../grammar.log'
+alias wgrm='watch -n 1 grep error grammar.log'
 alias bdhv='mvn install -DskipTests'
 alias rbdhv='mvn clean install -DskipTests'
 alias bdicpt='cd inceptor; sbt/sbt package; cd ..'
