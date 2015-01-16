@@ -20,6 +20,7 @@ done
 
 paths=(
 $NGMR_SHELL_HOME/target
+$DEVROOT/$HIVEROOT/src
 $NGMR_HOME/lib_managed
 $NGMR_SHELL_HOME/lib
 $NGMR_SHELL_HOME/lib_managed 

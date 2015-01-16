@@ -18,6 +18,7 @@ for jar in `find $DEVROOT/ngmr-1.7-transwarp/inceptor/lib_managed -name 'slf4j*j
 done
 
 paths=(
+$DEVROOT/$HIVEROOT/src
 $DEVROOT/ngmr-1.7-transwarp/inceptor/lib_managed
 $MYSQL_CONNECTOR
 )
