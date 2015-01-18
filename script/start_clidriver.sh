@@ -18,6 +18,18 @@ for jar in `find $NGMR_SHELL_HOME/lib_managed -name 'slf4j*1.7.5*jar'`; do
     CLASSPATH+=:$jar
 done
 
+if [ "$TDH_VERSION" = "3.4" ]; then
+paths=(
+$DEVROOT/$HIVEROOT/src/build/dist/lib
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/default 
+$DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.23.shim
+$NGMR_SHELL_HOME/target
+$NGMR_SHELL_HOME/lib
+$NGMR_SHELL_HOME/lib_managed 
+$NGMR_HOME/core/target
+$NGMR_HOME/lib_managed 
+)
+else
 paths=(
 $NGMR_SHELL_HOME/target
 $NGMR_HOME/lib_managed
@@ -26,6 +38,7 @@ $NGMR_SHELL_HOME/lib
 $NGMR_SHELL_HOME/lib_managed 
 $NGMR_SHELL_HOME/../scala/lib
 )
+fi
 
 for path in ${paths[@]}; do
     for jar in `find_without_slf4j $path`; do
