@@ -53,7 +53,7 @@ function selpst ()
     fi
 }
 
-function cf ()
+function cfp ()
 {
     about 'copy full path of a file to clipboard'
     param '1: file name'
@@ -62,7 +62,7 @@ function cf ()
     echo "`clippst` copied to clipboard."
 }
 
-function sf ()
+function sfp ()
 {
     about 'copy full path of a file to select'
     param '1: file name'
