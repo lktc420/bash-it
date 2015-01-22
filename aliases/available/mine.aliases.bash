@@ -61,7 +61,6 @@ alias hbase='/usr/lib/hbase/bin/hbase shell'
 alias thive='$SCRIPT_HOME/hive.tmux.sh'
 
 alias rbdgrm='mvn clean org.antlr:antlr3-maven-plugin:3.4:antlr 2>&1 | tee ../grammar.log'
-alias wgrm='watch -n 1 grep error grammar.log'
 alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -DskipTests; fi'
 alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -DskipTests; fi'
 alias bdicpt='if [ "$TDH_VERSION" = "3.4" ]; then ./compile.sh shark; else cd inceptor; sbt/sbt package; cd ..; fi'
