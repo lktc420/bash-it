@@ -3,23 +3,25 @@
 PL_TEST_ROOT=$DEVROOT/$HIVEROOT/src/sqlUnitTest/pl
 
 TEST_DIRS=(
-#anon_exec
-#collection
-#conversion
+anon_exec
+collection
+conversion
 cursor
-#empty_func
-#for_all
-#for_loop
-#goto
-#query
-#select_into
-#simple_loop
-#syscall
-#type
-#udf
-#while_loop
-#exception
-#parameters
+empty_func
+for_all
+for_loop
+goto
+query
+select_into
+simple_loop
+syscall
+type
+udf
+while_loop
+exception
+parameters
+variable
+block
 )
 
 # ddl set up
