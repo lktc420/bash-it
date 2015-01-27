@@ -2,8 +2,6 @@
 
 tmux new-session -d -s hive -n hive
 tmux send-keys 'ghv' 'C-m'
-tmux split-window -v
-tmux send-keys 'ghv; wgrm' 'C-m'
 
 tmux new-window -n ngmr
 tmux send-keys 'gngmr' 'C-m'
