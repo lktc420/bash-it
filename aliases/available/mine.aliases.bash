@@ -1,4 +1,7 @@
 # Envs
+
+stty -ixon -ixoff
+
 if [ $(uname) = "Darwin" ]; then
     export HOME_ABS=/Users/zanmato
     export DEVROOT=$HOME_ABS/git
