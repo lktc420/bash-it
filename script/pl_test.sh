@@ -52,11 +52,11 @@ for dir in ${TEST_DIRS[@]}; do
     sed '/^$/d' tmp.1 >& tmp.2
     sed 's/\t/  /g' tmp.2 >& $log
 
-    diff $ref $log >& tmp
+    diff -bB $ref $log >& tmp
     if [ ! -s tmp ] ; then
-	echo "$ref: PASS"
+      echo "$ref: PASS"
     else
-        echo "$ref: FAIL" 
+      echo "$ref: FAIL" 
     fi
   done
 done
