@@ -48,11 +48,7 @@ for dir in ${TEST_DIRS[@]}; do
     log=${ref/\.txt/\.log}
     $SCRIPT_HOME/start_clidriver.sh -f $sql | grep -v "^OK" | grep -v "Time taken:" | grep -v "output" | grep -v "Executing ">& $log
 
-    sed 's/^ *//g' $log >& tmp.1
-    sed '/^$/d' tmp.1 >& tmp.2
-    sed 's/\t/  /g' tmp.2 >& $log
-
-    diff -bB $ref $log >& tmp
+    diff -b -B $ref $log >& tmp
     if [ ! -s tmp ] ; then
       echo "$ref: PASS"
     else
