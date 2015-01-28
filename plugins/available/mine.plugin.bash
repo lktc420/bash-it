@@ -6,7 +6,11 @@ function fp ()
     about 'display full path of a file'
     param '1: file name'
     group 'mine'
-    find $* | sed "s:^:`pwd`/:"
+    if [ "${1::1}" == "/" ]; then
+      echo $1
+    else
+      echo $1 | sed "s:^:`pwd`/:"
+    fi
 }
 
 function clipcpy ()
