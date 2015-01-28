@@ -93,3 +93,29 @@ function jpk ()
     done
 }
 
+function sce ()
+{
+    about 'copy full path of e.sql to select'
+    group 'mine'
+    sfp $DEVROOT/inceptor/sql/e.sql
+}
+
+function ccf ()
+{
+    about 'copy full path of a file to clipboard and paste to f.sql'
+    param '1: file name'
+    group 'mine'
+    cfp $*
+    echo "source `clippst`" > $DEVROOT/inceptor/sql/f.sql
+    echo "`clippst` sourced to $DEVROOT/inceptor/sql/f.sql"
+}
+
+function scf ()
+{
+    about 'copy full path of a file to select and paste to f.sql'
+    param '1: file name'
+    group 'mine'
+    sfp $*
+    echo "source `selpst`" > $DEVROOT/inceptor/sql/f.sql
+    echo "`selpst` sourced to $DEVROOT/inceptor/sql/f.sql"
+}

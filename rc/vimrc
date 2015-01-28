@@ -47,4 +47,7 @@ nmap gl <C-W>l
 imap jj <Esc>
 map <Space> :
 
+nmap gs :let @*=expand("%:p")<CR>
+nmap gc :let @+=expand("%:p")<CR>
+
 ":autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
