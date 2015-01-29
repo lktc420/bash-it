@@ -22,6 +22,7 @@ exception
 parameters
 variable
 block
+chinese
 )
 
 # ddl set up
