@@ -47,7 +47,7 @@ for dir in ${TEST_DIRS[@]}; do
   for ref in `find $PL_TEST_ROOT/$dir -name '*.txt'` ; do
     sql=${ref/\.txt/\.sql}
     log=${ref/\.txt/\.log}
-    $SCRIPT_HOME/start_clidriver.sh -f $sql | grep -v "^OK" | grep -v "Time taken:" | grep -v "output" | grep -v "Executing ">& $log
+    $SCRIPT_HOME/start_clidriver.sh -f $sql | grep -v "^OK" | grep -v "Time taken:" | grep -v "output" | grep -v "Executing " | grep -v "^Deleted file:" >& $log
 
     diff -b -B $ref $log >& tmp
     if [ ! -s tmp ] ; then
