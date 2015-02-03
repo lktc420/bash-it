@@ -23,6 +23,7 @@ parameters
 variable
 block
 chinese
+dynamic_sql
 )
 
 # ddl set up
