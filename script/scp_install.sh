@@ -3,7 +3,8 @@ if [ "$TDH_VERSION" = "3.4" ]; then
   srcs=("$DEVROOT/$HIVEROOT/src/build/dist/lib/hive*.jar" "$DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar" "$DEVROOT/ngmr-1.7-transwarp/shark/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar")
   dsts=("/usr/lib/hive/lib/" "/usr/lib/ngmr/core/target/scala-2.10/" "/usr/lib/ngmr-shell/target/scala-2.10/")
 else
-  srcs=("`find $DEVROOT/$HIVEROOT/src -name hive*.jar`" "$DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar" "$DEVROOT/ngmr-1.7-transwarp/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar")
+  srcs=("$DEVROOT/PreCheck/jar/hive/hive*jar" "$DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar" "$DEVROOT/PreCheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar")
+  # srcs=("`find $DEVROOT/$HIVEROOT/src -name hive*.jar`" "$DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar" "$DEVROOT/ngmr-1.7-transwarp/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar")
   # srcs=("`find $DEVROOT/$HIVEROOT/src -name hive*.jar`" "$DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/ngmr-core_2.10-1.1.0-transwarp.jar" "$DEVROOT/ngmr-1.7-transwarp/inceptor/target/scala-2.10/ngmr-shell_2.10-1.1.0-transwarp.jar")
   dsts=("/usr/lib/hive/lib/" "/usr/lib/ngmr/core/target/scala-2.10/" "/usr/lib/ngmr-shell/target/scala-2.10/")
 fi
