@@ -1,0 +1,5 @@
+#!/bin/bash
+
+temp=($@)
+args=${temp[@]:3}
+$SCRIPT_HOME/start_clidriver.sh $args

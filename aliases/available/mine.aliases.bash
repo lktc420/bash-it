@@ -72,7 +72,7 @@ alias rbdspk='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ..
 alias bdicpt='if [ "$TDH_VERSION" = "3.4" ]; then ./compile.sh shark; else cd inceptor; sbt/sbt package; cd ..; fi'
 alias rbdicpt='if [ "$TDH_VERSION" = "3.4" ]; then cd shark; sbt/sbt clean; cd ..; ./compile.sh shark; else rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd inceptor; sbt/sbt clean package; cd ..; fi'
 alias rbdngmr='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ../shark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile spark; ./compile shark; else cd spark; sbt/sbt clean publish-local; rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd ../inceptor; sbt/sbt clean package; cd ..; fi'
-alias pltest='$SCRIPT_HOME/pl_test.sh'
+alias plt='$SCRIPT_HOME/pl_test.sh'
 
 alias insthv='for src in `find $DEVROOT/$HIVEROOT/src -name "hive*jar" | grep -v "tests.jar"`; do dst=`basename $src`; dst=${dst/tdh40\.jar/transwarp-tdh40\.jar}; cp $src $DEVROOT/PreCheck/jar/hive/$dst; done'
 alias instspk='cp $DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/ngmr-1.7-transwarp/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar'

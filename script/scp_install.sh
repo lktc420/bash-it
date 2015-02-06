@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cluster=(172.16.1.81 172.16.1.82 172.16.1.83 172.16.1.84)
 if [ "$TDH_VERSION" = "3.4" ]; then
   srcs=("$DEVROOT/$HIVEROOT/src/build/dist/lib/hive*.jar" "$DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar" "$DEVROOT/ngmr-1.7-transwarp/shark/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar")

@@ -113,3 +113,5 @@ for rc in $BASH_IT/rc/*; do
 done
 
 ln -sf $BASH_IT/rc/vimrc $HOME/.ideavimrc
+
+sudo ln -sf $BASH_IT/script/transwarp /usr/bin/transwarp
