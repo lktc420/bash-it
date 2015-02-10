@@ -5,7 +5,8 @@ PL_TEST_ROOT=$DEVROOT/$HIVEROOT/src/sqlUnitTest/pl
 if [ $# = 0 ];then
   TEST_DIRS=`cat $PL_TEST_ROOT/test_list.txt`
 else
-  TEST_DIRS=($@)
+  TEMP=($@)
+  TEST_DIRS=${TEMP[@]}
 fi
 echo "Test dirs are:"
 echo $TEST_DIRS
