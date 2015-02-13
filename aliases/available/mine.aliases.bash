@@ -24,24 +24,20 @@ export NGMRROOT=ngmr-1.7-transwarp
 export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 
-export SVN_ROOT=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
-export SVN_SBRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
-export SVN_RBRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
-export SVN_RUOXI_BRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
-export SVN_HIVE_TRUNK=https://172.16.1.168/transwarp/trunk/hadoop/sources/hive-0.12.0-transwarp
+export SVN_ROOT=https://172.16.1.168/transwarp
+export BRANCH=$SVN_ROOT/sbranches/ruoxi
+export TRUNK=$SVN_ROOT/trunk/hadoop/sources
+
+export HIVE_BRANCH=$BRANCH/warp-0000-hive
+export NGMR_BRANCH=$BRANCH/warp-0000-ngmr
+
+export HIVE_TRUNK=$TRUNK/hive-0.12.0-transwarp
+export NGMR_TRUNK=$TRUNK/ngmr-1.7-transwarp
 
 export EDITOR='vi'
 export GIT_EDITOR='vi'
 
 alias sudo='sudo -E '
-
-# Exports
-HIVEROOT34=hive34
-HIVEROOT40=hive-0.12.0-transwarp
-HIVEROOT34=ngmr34
-HIVEROOT40=ngmr-1.7-transwarp
-alias tdh34='export TDH_VERSION=3.4; export HIVEROOT=$HIVEROOT34; export NGMRROOT=$NGMRROOT34;'
-alias tdh40='export TDH_VERSION=4.0; export HIVEROOT=$HIVEROOT40; export NGMRROOT=$NGMRROOT40;'
 
 # Scripts
 alias smst='$SCRIPT_HOME/start_metastore.sh'

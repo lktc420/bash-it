@@ -123,3 +123,30 @@ function scf ()
     echo "source `selpst`" > $DEVROOT/inceptor/sql/f.sql
     echo "`selpst` sourced to $DEVROOT/inceptor/sql/f.sql"
 }
+
+function tdh34 ()
+{
+    about 'switch evn to TDH3.4'
+    group 'mine'
+    export TDH_VERSION=3.4
+    export HIVEROOT=hive34
+    export NGMRROOT=ngmr34
+}
+
+function tdh40 ()
+{
+    about 'switch evn to TDH4.0'
+    group 'mine'
+    export TDH_VERSION=4.0
+    export HIVEROOT=hive-0.12.0-transwarp
+    export NGMRROOT=ngmr-1.7-transwarp
+}
+
+function warp ()
+{
+    about 'switch the working warp id'
+    param '1: warp number (4 digits)'
+    group 'mine'
+    export HIVE_BRANCH=$BRANCH/warp-$1-hive
+    export NGMR_BRANCH=$BRANCH/warp-$1-ngmr
+}
