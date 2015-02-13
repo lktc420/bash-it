@@ -20,10 +20,14 @@ export HADOOP_HOME=/usr/lib/hadoop
 export HADOOP_LIBEXEC_DIR=$HADOOP_HOME/libexec
 export HIVE_HOME=/usr/lib/hive
 export HIVEROOT=hive-0.12.0-transwarp
+export NGMRROOT=ngmr-1.7-transwarp
 export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 
-export SVN_HIVE_BRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
+export SVN_ROOT=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
+export SVN_SBRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
+export SVN_RBRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
+export SVN_RUOXI_BRANCH=https://172.16.1.168/transwarp/sbranches/ruoxi/warp-1336-hive-0.12.0-transwarp/hive-0.12.0-transwarp
 export SVN_HIVE_TRUNK=https://172.16.1.168/transwarp/trunk/hadoop/sources/hive-0.12.0-transwarp
 
 export EDITOR='vi'
@@ -34,8 +38,10 @@ alias sudo='sudo -E '
 # Exports
 HIVEROOT34=hive34
 HIVEROOT40=hive-0.12.0-transwarp
-alias tdh34='export TDH_VERSION=3.4; export HIVEROOT=$HIVEROOT34'
-alias tdh40='export TDH_VERSION=4.0; export HIVEROOT=$HIVEROOT40'
+HIVEROOT34=ngmr34
+HIVEROOT40=ngmr-1.7-transwarp
+alias tdh34='export TDH_VERSION=3.4; export HIVEROOT=$HIVEROOT34; export NGMRROOT=$NGMRROOT34;'
+alias tdh40='export TDH_VERSION=4.0; export HIVEROOT=$HIVEROOT40; export NGMRROOT=$NGMRROOT40;'
 
 # Scripts
 alias smst='$SCRIPT_HOME/start_metastore.sh'
@@ -51,7 +57,7 @@ unalias q
 alias gdev='cd $DEVROOT'
 alias gbsht='cd $BASH_IT'
 alias ghv='cd $DEVROOT/$HIVEROOT/src'
-alias gngmr='cd $DEVROOT/ngmr-1.7-transwarp'
+alias gngmr='cd $DEVROOT/$NGMRROOT'
 
 # Commands
 alias tmux='tmux -2' 
@@ -77,5 +83,5 @@ alias rbdngmr='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd .
 alias plt='$SCRIPT_HOME/pl_test.sh'
 
 alias insthv='rm -rf $DEVROOT/PreCheck/jar/hive/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/$HIVEROOT/src/build/dist/lib/hive*jar $DEVROOT/PreCheck/jar/hive; else for src in `find $DEVROOT/$HIVEROOT/src -name "hive*jar" | grep -v "tests.jar"`; do dst=`basename $src`; dst=${dst/tdh40\.jar/transwarp-tdh40\.jar}; cp $src $DEVROOT/PreCheck/jar/hive/$dst; done fi'
-alias instspk='rm -rf $DEVROOT/PreCheck/jar/spark/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar $DEVROOT/PreCheck/jar/spark; else cp $DEVROOT/ngmr-1.7-transwarp/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/ngmr-1.7-transwarp/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar; fi'
-alias insticpt='rm -rf $DEVROOT/PreCheck/jar/inceptor/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/ngmr-1.7-transwarp/shark/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar $DEVROOT/PreCheck/jar/inceptor; else cp $DEVROOT/ngmr-1.7-transwarp/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar; fi'
+alias instspk='rm -rf $DEVROOT/PreCheck/jar/spark/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar $DEVROOT/PreCheck/jar/spark; else cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/$NGMRROOT/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar; fi'
+alias insticpt='rm -rf $DEVROOT/PreCheck/jar/inceptor/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/$NGMRROOT/shark/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar $DEVROOT/PreCheck/jar/inceptor; else cp $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar; fi'

@@ -2,12 +2,12 @@
 
 source $BASH_IT/script/util.sh
 
-NGMR_HOME="$DEVROOT/ngmr-1.7-transwarp/spark"
+NGMR_HOME="$DEVROOT/$NGMRROOT/spark"
 
 if [ "$TDH_VERSION" = "3.4" ]; then
-NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/shark"
+NGMR_SHELL_HOME="$DEVROOT/$NGMRROOT/shark"
 else
-NGMR_SHELL_HOME="$DEVROOT/ngmr-1.7-transwarp/inceptor"
+NGMR_SHELL_HOME="$DEVROOT/$NGMRROOT/inceptor"
 fi
 INCEPTOR_HOME="$DEVROOT/inceptor"
 

@@ -13,7 +13,7 @@ fi
 CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
 
 #Promote slf4j1.7.5
-for jar in `find $DEVROOT/ngmr-1.7-transwarp/inceptor/lib_managed -name 'slf4j*jar'`; do
+for jar in `find $DEVROOT/$NGMRROOT/inceptor/lib_managed -name 'slf4j*jar'`; do
     CLASSPATH+=:$jar
 done
 
@@ -27,7 +27,7 @@ $MYSQL_CONNECTOR
 else
 paths=(
 $DEVROOT/$HIVEROOT/src
-$DEVROOT/ngmr-1.7-transwarp/inceptor/lib_managed
+$DEVROOT/$NGMRROOT/inceptor/lib_managed
 $MYSQL_CONNECTOR
 )
 fi
