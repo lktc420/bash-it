@@ -73,7 +73,7 @@ alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn cle
 alias rbdspk='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; else cd spark; sbt/sbt clean publish-local; cd ..; fi'
 alias bdicpt='if [ "$TDH_VERSION" = "3.4" ]; then ./compile.sh shark; else cd inceptor; sbt/sbt package; cd ..; fi'
 alias rbdicpt='if [ "$TDH_VERSION" = "3.4" ]; then cd shark; sbt/sbt clean; cd ..; ./compile.sh shark; else rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd inceptor; sbt/sbt clean package; cd ..; fi'
-alias rbdngmr='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ../shark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile spark; ./compile shark; else cd spark; sbt/sbt clean publish-local; rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd ../inceptor; sbt/sbt clean package; cd ..; fi'
+alias rbdngmr='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ../shark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; ./compile.sh shark; else cd spark; sbt/sbt clean publish-local; rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd ../inceptor; sbt/sbt clean package; cd ..; fi'
 alias plt='$SCRIPT_HOME/pl_test.sh'
 
 alias insthv='for src in `find $DEVROOT/$HIVEROOT/src -name "hive*jar" | grep -v "tests.jar"`; do dst=`basename $src`; dst=${dst/tdh40\.jar/transwarp-tdh40\.jar}; cp $src $DEVROOT/PreCheck/jar/hive/$dst; done'
