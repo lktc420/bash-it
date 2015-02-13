@@ -32,8 +32,10 @@ export GIT_EDITOR='vi'
 alias sudo='sudo -E '
 
 # Exports
-alias tdh34='export TDH_VERSION=3.4'
-alias tdh40='export TDH_VERSION=4.0'
+HIVEROOT34=hive34
+HIVEROOT40=hive-0.12.0-transwarp
+alias tdh34='export TDH_VERSION=3.4; export HIVEROOT=$HIVEROOT34'
+alias tdh40='export TDH_VERSION=4.0; export HIVEROOT=$HIVEROOT40'
 
 # Scripts
 alias smst='$SCRIPT_HOME/start_metastore.sh'
