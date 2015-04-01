@@ -40,8 +40,10 @@ export GIT_EDITOR='vi'
 alias sudo='sudo -E '
 
 # Scripts
-alias smst='$SCRIPT_HOME/start_metastore.sh'
-alias scldr='$SCRIPT_HOME/start_clidriver.sh'
+alias smst='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.metastore.HiveMetaStore &'
+alias scldr='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N'
+alias sisv='$SCRIPT_HOME/start_hive.sh io.transwarp.ngmr.NgmrServer &'
+alias sbl='$SCRIPT_HOME/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive://localhost:10000/default'
 alias sall='$SCRIPT_HOME/start_all.sh'
 
 alias scpinst='$SCRIPT_HOME/scp_install.sh'

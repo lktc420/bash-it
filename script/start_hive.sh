@@ -11,6 +11,12 @@ NGMR_SHELL_HOME="$DEVROOT/$NGMRROOT/inceptor"
 fi
 INCEPTOR_HOME="$DEVROOT/inceptor"
 
+if [ $(uname) = "Darwin" ]; then
+    MYSQL_CONNECTOR=$INCEPTOR_HOME/lib/mac
+elif [ $(uname) = "Linux" ]; then
+    MYSQL_CONNECTOR=$INCEPTOR_HOME/lib/ubuntu
+fi
+
 CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
 
 #Promote slf4j1.7.5
@@ -28,6 +34,7 @@ $NGMR_SHELL_HOME/lib
 $NGMR_SHELL_HOME/lib_managed 
 $NGMR_HOME/core/target
 $NGMR_HOME/lib_managed 
+$MYSQL_CONNECTOR
 )
 else
 paths=(
@@ -37,6 +44,7 @@ $DEVROOT/$HIVEROOT/src
 $NGMR_SHELL_HOME/lib
 $NGMR_SHELL_HOME/lib_managed 
 $NGMR_SHELL_HOME/../scala/lib
+$MYSQL_CONNECTOR
 )
 fi
 
@@ -48,4 +56,5 @@ done
 
 #echo $CLASSPATH;
 
-$JAVA_HOME/bin/java $HADOOP_OPTS -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -Xmx4096m -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -cp $CLASSPATH org.apache.hadoop.hive.cli.CliDriver -N $@
+$JAVA_HOME/bin/java $HADOOP_OPTS -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -Xmx4096m -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -cp $CLASSPATH $@
+#$JAVA_HOME/bin/java $HADOOP_OPTS -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -Xmx4096m -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -cp $CLASSPATH org.apache.hadoop.hive.cli.CliDriver -N $@
