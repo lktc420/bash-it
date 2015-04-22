@@ -25,11 +25,14 @@ export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 
 export SVN_ROOT=https://172.16.1.168/transwarp
-export BRANCH=$SVN_ROOT/sbranches/ruoxi
+# export BRANCH=$SVN_ROOT/sbranches/ruoxi
+export BRANCH=$SVN_ROOT/sbranches/wayneliu
 export TRUNK=$SVN_ROOT/trunk/hadoop/sources
 
-export HIVE_BRANCH=$BRANCH/warp-2014-hive
-export NGMR_BRANCH=$BRANCH/warp-2014-ngmr
+# export HIVE_BRANCH=$BRANCH/warp-2014-hive
+# export NGMR_BRANCH=$BRANCH/warp-2014-ngmr
+export HIVE_BRANCH=$BRANCH/hive_acid_orc/hive-0.12.0-transwarp
+export NGMR_BRANCH=$BRANCH/hive_acid_orc/ngmr-1.7-transwarp
 
 export HIVE_TRUNK=$TRUNK/hive-0.12.0-transwarp
 export NGMR_TRUNK=$TRUNK/ngmr-1.7-transwarp
@@ -72,8 +75,10 @@ alias thive='$SCRIPT_HOME/hive.tmux.sh'
 alias icv='iconv -f gbk -t utf-8'
 
 alias rbdgrm='mvn clean org.antlr:antlr3-maven-plugin:3.4:antlr 2>&1 | tee ../grammar.log'
-alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -DskipTests; fi'
-alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -DskipTests; fi'
+alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -Dmaven.test.skip=true; fi'
+alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -Dmaven.test.skip=true; fi'
+# alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -DskipTests; fi'
+# alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -DskipTests; fi'
 alias rbdspk='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; else cd spark; sbt/sbt clean publish-local; cd ..; fi'
 alias bdicpt='if [ "$TDH_VERSION" = "3.4" ]; then ./compile.sh shark; else cd inceptor; sbt/sbt package; cd ..; fi'
 alias rbdicpt='if [ "$TDH_VERSION" = "3.4" ]; then cd shark; sbt/sbt clean; cd ..; ./compile.sh shark; else rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd inceptor; sbt/sbt clean package; cd ..; fi'
