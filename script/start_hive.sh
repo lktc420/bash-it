@@ -19,8 +19,8 @@ fi
 
 CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
 
-#Promote slf4j1.7.5
-for jar in `find $NGMR_SHELL_HOME/lib_managed -name 'slf4j*1.7.5*jar'`; do
+#Promote slf4j1.7.6
+for jar in `find $NGMR_SHELL_HOME/lib_managed -name 'slf4j*1.7.6*jar'`; do
     CLASSPATH+=:$jar
 done
 
