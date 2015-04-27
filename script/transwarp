@@ -2,4 +2,4 @@
 
 temp=($@)
 args=${temp[@]:3}
-$SCRIPT_HOME/start_clidriver.sh $args
+$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N $args
