@@ -25,12 +25,11 @@ export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 
 export SVN_ROOT=https://172.16.1.168/transwarp
-# export BRANCH=$SVN_ROOT/sbranches/ruoxi
-export BRANCH=$SVN_ROOT/sbranches/wayneliu
+export BRANCH=$SVN_ROOT/sbranches/ruoxi
 export TRUNK=$SVN_ROOT/trunk/hadoop/sources
 
-export HIVE_BRANCH=$BRANCH/warp-2510-hive
-export NGMR_BRANCH=$BRANCH/warp-2510-ngmr
+export HIVE_BRANCH=$BRANCH/warp-2568-hive
+export NGMR_BRANCH=$BRANCH/warp-2568-ngmr
 
 export HIVE_TRUNK=$TRUNK/hive-0.12.0-transwarp
 export NGMR_TRUNK=$TRUNK/ngmr-1.7-transwarp
