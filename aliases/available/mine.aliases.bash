@@ -4,14 +4,13 @@ stty -ixon -ixoff
 
 if [ $(uname) = "Darwin" ]; then
     export HOME_ABS=/Users/zanmato
-    export DEVROOT=$HOME_ABS/git
-    export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
 elif [ $(uname) = "Linux" ]; then
     export HOME_ABS=/home/ruoxi
-    export DEVROOT=$HOME_ABS/dev
     export JAVA_HOME=/usr/lib/jvm/java-7-oracle
     # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 fi
+export DEVROOT=$HOME_ABS/dev
 export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=1024m"
 export SCRIPT_HOME=$BASH_IT/script
 export SCALA_HOME=/usr/lib/scala-2.11.1
