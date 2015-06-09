@@ -27,8 +27,10 @@ export SVN_ROOT=https://172.16.1.168/transwarp
 export BRANCH=$SVN_ROOT/sbranches/ruoxi
 export TRUNK=$SVN_ROOT/trunk/hadoop/sources
 
-export HIVE_BRANCH=$BRANCH/warp-2568-hive
-export NGMR_BRANCH=$BRANCH/warp-2568-ngmr
+#export HIVE_BRANCH=$BRANCH/warp-2836-hive
+#export NGMR_BRANCH=$BRANCH/warp-2836-ngmr
+export HIVE_BRANCH=$BRANCH/warp-2568-hive-2
+export NGMR_BRANCH=$BRANCH/warp-2568-ngmr-2
 
 export HIVE_TRUNK=$TRUNK/hive-0.12.0-transwarp
 export NGMR_TRUNK=$TRUNK/ngmr-1.7-transwarp
@@ -75,6 +77,9 @@ alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -D
 alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -Dmaven.test.skip=true; fi'
 # alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -DskipTests; fi'
 # alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -DskipTests; fi'
+alias clhbs='rm -rf ~/.m2/repository/org/apache/hbase ~/.ivy2/cache/org.apache.hbase'
+alias clhv='rm -rf ~/.m2/repository/org/apache/hive ~/.ivy2/local/org.apache.hive ~/.ivy2/local/org.apache.hive.shims ~/.ivy2/cache/org.apache.hive ~/.ivy2/cache/org.apache.hive.shims'
+alias clspk='rm -rf ~/.m2/repository/org/apache/spark ~/.ivy2/local/org.apache.spark ~/.ivy2/cache/org.apache.spark'
 alias rbdspk='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; else cd spark; sbt/sbt clean publish-local; cd ..; fi'
 alias bdicpt='if [ "$TDH_VERSION" = "3.4" ]; then ./compile.sh shark; else cd inceptor; sbt/sbt package; cd ..; fi'
 alias rbdicpt='if [ "$TDH_VERSION" = "3.4" ]; then cd shark; sbt/sbt clean; cd ..; ./compile.sh shark; else rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd inceptor; sbt/sbt clean package; cd ..; fi'
