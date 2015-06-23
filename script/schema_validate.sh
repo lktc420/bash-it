@@ -2,26 +2,26 @@
 
 for dir in $DEVROOT/$HIVEROOT/src/build/dist/lib
 do
-    for file in `ls $dir`
-    do
-        CLASSPATH=$CLASSPATH:$dir/$file
-    done
+  for file in `ls $dir`
+  do
+    CLASSPATH=$CLASSPATH:$dir/$file
+  done
 done
 
 for dir in $DEVROOT/$HIVEROOT/src/build/ivy/lib
 do
-    for file in `ls $dir`
-    do
-        CLASSPATH=$CLASSPATH:$dir/$file
-    done
+  for file in `ls $dir`
+  do
+    CLASSPATH=$CLASSPATH:$dir/$file
+  done
 done
 
 for dir in $DEVROOT/$HIVEROOT/src/build/ivy/lib/hadoop0.20.shim
 do
-    for file in `ls $dir`
-    do
-        CLASSPATH=$CLASSPATH:$dir/$file
-    done
+  for file in `ls $dir`
+  do
+    CLASSPATH=$CLASSPATH:$dir/$file
+  done
 done
 
 CLASSPATH=$CLASSPATH:/usr/lib/hive/lib/mysql-connector-java.jar:$HOME_ABS/dev/WARP-1019-hive-0.12.0-transwarp/src/metastore/src/model/package.jdo
