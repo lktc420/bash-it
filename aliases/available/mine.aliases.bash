@@ -29,8 +29,8 @@ export TRUNK=$SVN_ROOT/trunk/hadoop/sources
 
 #export HIVE_BRANCH=$BRANCH/warp-2836-hive
 #export NGMR_BRANCH=$BRANCH/warp-2836-ngmr
-export HIVE_BRANCH=$BRANCH/warp-2568-hive-2
-export NGMR_BRANCH=$BRANCH/warp-2568-ngmr-2
+export HIVE_BRANCH=$BRANCH/warp-2568-hive-3
+export NGMR_BRANCH=$BRANCH/warp-2568-ngmr-3
 
 export HIVE_TRUNK=$TRUNK/hive-0.12.0-transwarp
 export NGMR_TRUNK=$TRUNK/ngmr-1.7-transwarp
