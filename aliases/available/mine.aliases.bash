@@ -1,6 +1,6 @@
 # Envs
 
-stty -ixon -ixoff
+# stty -ixon -ixoff
 
 if [ $(uname) = "Darwin" ]; then
   export HOME_ABS=/Users/zanmato
