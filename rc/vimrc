@@ -14,7 +14,7 @@ set smarttab
 
 if has('gui_running')
   set background=dark
-  colorscheme base16-eighties
+  colorscheme desert
 else
   " something for console Vim
 endif
@@ -27,6 +27,7 @@ set cin
 set cino=:0g0t0
 set autoindent
 "set mouse=a
+set ic
 
 set nu
 nmap <F8> :set number! number?<CR>
