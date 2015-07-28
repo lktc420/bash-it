@@ -15,24 +15,20 @@ fi
 CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
 
 # Whether IDE compiled classes are newer or command line built jars are.
-newer=`find $INCEPTOR_HOME/idea/out/production -newer $NGMR_SHELL_HOME/target/inceptor_2.10-1.1.0-transwarp.jar`
+ide_newer=`find $INCEPTOR_HOME/idea/out/production -newer $NGMR_SHELL_HOME/target/inceptor_2.10-1.1.0-transwarp.jar`
 
-echo ${newer[*]}
-
-if [ "${#newer[@]}" == "1" ]; then
-#if [ -e "$INCEPTOR_HOME/idea/out/production" ]; then
-  # Command line built jars are newer.
-  echo 'Command line built jars are newer.'
+if [ x"$ide_newer" = x"" ]; then
+  # echo 'Command line built jars are newer.'
   paths=(
   $NGMR_SHELL_HOME/target
   $NGMR_HOME/core/target
   $NGMR_HOME/holodesk
   $DEVROOT/$HIVEROOT/src
   $NGMR_HOME/streaming/target
+  $MYSQL_CONNECTOR
   )
 else
-  # IDE compiled classes are newer.
-  echo 'IDE compiled classes are newer.'
+  # echo 'IDE compiled classes are newer.'
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/inceptor
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-core
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-holodesk
@@ -59,6 +55,6 @@ for path in ${paths[@]}; do
   done
 done
 
-#echo $CLASSPATH;
+# echo $CLASSPATH;
 
 $JAVA_HOME/bin/java $HADOOP_OPTS -Dlog4j.configuration=file://$INCEPTOR_HOME/conf/hive-log4j.properties -server -Xmx8192m -XX:+UseParNewGC -XX:NewRatio=2 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -cp $CLASSPATH $@
