@@ -83,8 +83,8 @@ alias rbdhv='mvn clean install -DskipTests=true'
 alias bdspk='mvn install -DskipTests=true -Pyarn'
 alias rbdspk='mvn clean install -DskipTests=true -Pyarn'
 
-alias bdicpt='mvn install -Dmaven.skip.tests=true'
-alias rbdicpt='mvn clean install -Dmaven.skip.tests=true'
+alias bdicpt='mvn install -Dmaven.test.skip=true'
+alias rbdicpt='mvn clean install -Dmaven.test.skip=true'
 
 alias plt='$SCRIPT_HOME/pl_test.sh'
 
