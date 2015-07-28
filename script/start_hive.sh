@@ -20,7 +20,7 @@ fi
 CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
 
 #Promote slf4j1.7.5
-for jar in `find $NGMR_HOME/lib_managed -name 'slf4j*1.7.5*jar'`; do
+for jar in `find $NGMR_HOME/core/target/lib-idea -name 'slf4j*1.7.5*jar'`; do
   CLASSPATH+=:$jar
 done
 
@@ -37,16 +37,30 @@ if [ "$TDH_VERSION" = "3.4" ]; then
   $MYSQL_CONNECTOR
   )
 else
+  #paths=(
+  #$NGMR_SHELL_HOME/target
+  #$NGMR_HOME/lib_managed
+  #$DEVROOT/$HIVEROOT/src
+  #$NGMR_SHELL_HOME/lib
+  #$NGMR_SHELL_HOME/lib_managed 
+  #$NGMR_SHELL_HOME/../scala/lib
+  #$MYSQL_CONNECTOR
+  #)
   paths=(
-  $NGMR_SHELL_HOME/target
-  $NGMR_HOME/lib_managed
-  $DEVROOT/$HIVEROOT/src
-  $NGMR_SHELL_HOME/lib
-  $NGMR_SHELL_HOME/lib_managed 
-  $NGMR_SHELL_HOME/../scala/lib
+  $NGMR_SHELL_HOME/target/lib-idea
+  $NGMR_HOME/core/target/lib-idea
+  $NGMR_HOME/holodesk/target/lib-idea
+  $NGMR_HOME/streaming/target/lib-idea
+  $DEVROOT/$HIVEROOT/src/target/lib-idea
   $MYSQL_CONNECTOR
   )
 fi
+
+CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/inceptor
+CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-core
+CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-holodesk
+CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/hive
+CLASSPATH+=:NGMR_HOME/streaming/target/spark-streaming_2.10-1.1.0-transwarp.jar
 
 for path in ${paths[@]}; do
   for jar in `find_without_slf4j $path`; do
