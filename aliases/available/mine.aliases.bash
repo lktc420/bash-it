@@ -72,20 +72,22 @@ alias thive='$SCRIPT_HOME/hive.tmux.sh'
 
 alias icv='iconv -f gbk -t utf-8'
 
-alias rbdgrm='mvn clean org.antlr:antlr3-maven-plugin:3.4:antlr 2>&1 | tee ../grammar.log'
-alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -DskipTests=true; fi'
-alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -DskipTests=true; fi'
-# alias bdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant package; else mvn install -DskipTests; fi'
-# alias rbdhv='if [ "$TDH_VERSION" = "3.4" ]; then ant clean package; else mvn clean install -DskipTests; fi'
 alias clhbs='rm -rf ~/.m2/repository/org/apache/hbase ~/.ivy2/cache/org.apache.hbase'
 alias clhv='rm -rf ~/.m2/repository/org/apache/hive ~/.ivy2/local/org.apache.hive ~/.ivy2/local/org.apache.hive.shims ~/.ivy2/cache/org.apache.hive ~/.ivy2/cache/org.apache.hive.shims'
 alias clspk='rm -rf ~/.m2/repository/org/apache/spark ~/.ivy2/local/org.apache.spark ~/.ivy2/cache/org.apache.spark'
-alias rbdspk='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; else cd spark; sbt/sbt clean publish-local; cd ..; fi'
-alias bdicpt='if [ "$TDH_VERSION" = "3.4" ]; then ./compile.sh shark; else cd inceptor; sbt/sbt package; cd ..; fi'
-alias rbdicpt='if [ "$TDH_VERSION" = "3.4" ]; then cd shark; sbt/sbt clean; cd ..; ./compile.sh shark; else rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd inceptor; sbt/sbt clean package; cd ..; fi'
-alias rbdngmr='if [ "$TDH_VERSION" = "3.4" ]; then cd spark; sbt/sbt clean; cd ../shark; sbt/sbt clean; cd ..; ./compile.sh init; ./compile.sh spark; ./compile.sh shark; else cd spark; sbt/sbt clean publish-local; rm -rf ~/.ivy2/local/org.apache.hive ~/.ivy2/cache/org.apache.hive; cd ../inceptor; sbt/sbt clean package; cd ..; fi'
+
+alias rbdgrm='mvn clean org.antlr:antlr3-maven-plugin:3.4:antlr 2>&1 | tee ../grammar.log'
+alias bdhv='mvn install -DskipTests=true'
+alias rbdhv='mvn clean install -DskipTests=true'
+
+alias bdspk='mvn install -DskipTests=true -Pyarn'
+alias rbdspk='mvn clean install -DskipTests=true -Pyarn'
+
+alias bdicpt='mvn install -Dmaven.skip.tests=true'
+alias rbdicpt='mvn clean install -Dmaven.skip.tests=true'
+
 alias plt='$SCRIPT_HOME/pl_test.sh'
 
-alias insthv='rm -rf $DEVROOT/PreCheck/jar/hive/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/$HIVEROOT/src/build/dist/lib/hive*jar $DEVROOT/PreCheck/jar/hive; else for src in `find $DEVROOT/$HIVEROOT/src -name "hive*jar" | grep -v "tests.jar"`; do dst=`basename $src`; dst=${dst/tdh40\.jar/transwarp-tdh40\.jar}; cp $src $DEVROOT/PreCheck/jar/hive/$dst; done fi'
-alias instspk='rm -rf $DEVROOT/PreCheck/jar/spark/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/ngmr-core_2.10-0.9.0-incubating-SNAPSHOT.jar $DEVROOT/PreCheck/jar/spark; else cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/$NGMRROOT/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar; fi'
-alias insticpt='rm -rf $DEVROOT/PreCheck/jar/inceptor/*; if [ "$TDH_VERSION" = "3.4" ]; then cp $DEVROOT/$NGMRROOT/shark/target/scala-2.10/ngmr-shell_2.10-0.9.0-SNAPSHOT.jar $DEVROOT/PreCheck/jar/inceptor; else cp $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar; fi'
+alias insthv='rm -rf $DEVROOT/PreCheck/jar/hive/*; for src in `find $DEVROOT/$HIVEROOT/src -name "hive*jar" | grep -v "tests.jar"`; do dst=`basename $src`; dst=${dst/tdh40\.jar/transwarp-tdh40\.jar}; cp $src $DEVROOT/PreCheck/jar/hive/$dst; done'
+alias instspk='rm -rf $DEVROOT/PreCheck/jar/spark/*; cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/$NGMRROOT/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar'
+alias insticpt='rm -rf $DEVROOT/PreCheck/jar/inceptor/*; cp $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar'
