@@ -14,8 +14,25 @@ fi
 
 CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
 
-if [ -e "$INCEPTOR_HOME/idea/out/production" ]; then
-  # Prefer IDE compiled classes.
+# Whether IDE compiled classes are newer or command line built jars are.
+newer=`find $INCEPTOR_HOME/idea/out/production -newer $NGMR_SHELL_HOME/target/inceptor_2.10-1.1.0-transwarp.jar`
+
+echo ${newer[*]}
+
+if [ "${#newer[@]}" == "1" ]; then
+#if [ -e "$INCEPTOR_HOME/idea/out/production" ]; then
+  # Command line built jars are newer.
+  echo 'Command line built jars are newer.'
+  paths=(
+  $NGMR_SHELL_HOME/target
+  $NGMR_HOME/core/target
+  $NGMR_HOME/holodesk
+  $DEVROOT/$HIVEROOT/src
+  $NGMR_HOME/streaming/target
+  )
+else
+  # IDE compiled classes are newer.
+  echo 'IDE compiled classes are newer.'
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/inceptor
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-core
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-holodesk
@@ -28,15 +45,6 @@ if [ -e "$INCEPTOR_HOME/idea/out/production" ]; then
   $DEVROOT/$HIVEROOT/src/target/lib-idea
   $NGMR_HOME/streaming/target/lib-idea
   $MYSQL_CONNECTOR
-  )
-else
-  # Then command line built jars.
-  paths=(
-  $NGMR_SHELL_HOME/target
-  $NGMR_HOME/core/target
-  $NGMR_HOME/holodesk
-  $DEVROOT/$HIVEROOT/src
-  $NGMR_HOME/streaming/target
   )
 fi
 
