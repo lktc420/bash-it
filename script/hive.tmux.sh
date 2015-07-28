@@ -4,7 +4,9 @@ tmux new-session -d -s hive -n hive
 tmux send-keys 'ghv' 'C-m'
 
 tmux new-window -n ngmr
-tmux send-keys 'gngmr' 'C-m'
+tmux send-keys 'gngmr' 'C-m' 'cd spark' 'C-m'
+tmux split-window -v
+tmux send-keys 'gngmr' 'C-m' 'cd inceptor' 'C-m'
 
 tmux new-window -n run
 tmux split-window -v
