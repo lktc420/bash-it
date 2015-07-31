@@ -89,5 +89,5 @@ alias rbdicpt='mvn clean install -Dmaven.test.skip=true'
 alias plt='$SCRIPT_HOME/pl_test.sh'
 
 alias insthv='rm -rf $DEVROOT/PreCheck/jar/hive/*; for src in `find $DEVROOT/$HIVEROOT/src -name "hive*jar" | grep -v "tests.jar"`; do dst=`basename $src`; dst=${dst/tdh40\.jar/transwarp-tdh40\.jar}; cp $src $DEVROOT/PreCheck/jar/hive/$dst; done'
-alias instspk='rm -rf $DEVROOT/PreCheck/jar/spark/*; cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/$NGMRROOT/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar'
-alias insticpt='rm -rf $DEVROOT/PreCheck/jar/inceptor/*; cp $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar'
+alias instspk='rm -rf $DEVROOT/PreCheck/jar/spark/*; cp $DEVROOT/$NGMRROOT/spark/core/target/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/$NGMRROOT/spark/holodesk/target/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar'
+alias insticpt='rm -rf $DEVROOT/PreCheck/jar/inceptor/*; cp $DEVROOT/$NGMRROOT/inceptor/target/inceptor_2.10-1.1.0-transwarp.jar $DEVROOT/PreCheck/jar/inceptor/ngmr-shell_2.10-1.1.0-transwarp.jar'
