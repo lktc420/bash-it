@@ -22,9 +22,9 @@ if [ x"$ide_newer" = x"" ]; then
   paths=(
   $NGMR_SHELL_HOME/target
   $NGMR_HOME/core/target
-  $NGMR_HOME/holodesk
-  $DEVROOT/$HIVEROOT/src
+  $NGMR_HOME/holodesk/target
   $NGMR_HOME/streaming/target
+  $DEVROOT/$HIVEROOT/src
   $MYSQL_CONNECTOR
   )
 else
@@ -32,14 +32,14 @@ else
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/inceptor
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-core
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-holodesk
-  CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/hive
   CLASSPATH+=:$NGMR_HOME/streaming/target/spark-streaming_2.10-1.1.0-transwarp.jar
+  CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/hive
   paths=(
   $NGMR_SHELL_HOME/target/lib-idea
   $NGMR_HOME/core/target/lib-idea
   $NGMR_HOME/holodesk/target/lib-idea
-  $DEVROOT/$HIVEROOT/src/target/lib-idea
   $NGMR_HOME/streaming/target/lib-idea
+  $DEVROOT/$HIVEROOT/src/target/lib-idea
   $MYSQL_CONNECTOR
   )
 fi
