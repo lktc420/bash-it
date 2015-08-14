@@ -76,13 +76,13 @@ alias clspk='rm -rf ~/.m2/repository/org/apache/spark ~/.ivy2/local/org.apache.s
 
 alias rbdgrm='mvn clean org.antlr:antlr3-maven-plugin:3.4:antlr 2>&1 | tee ../grammar.log'
 alias bdhv='mvn install -DskipTests=true'
-alias rbdhv='mvn clean install -DskipTests=true'
+alias rbdhv='mvn clean install -DskipTests=true -Pidea'
 
 alias bdspk='mvn install -DskipTests=true -Pyarn'
-alias rbdspk='mvn clean install -DskipTests=true -Pyarn'
+alias rbdspk='mvn clean install -DskipTests=true -Pyarn -Pidea'
 
 alias bdicpt='mvn install -Dmaven.test.skip=true'
-alias rbdicpt='mvn clean install -Dmaven.test.skip=true'
+alias rbdicpt='mvn clean install -Dmaven.test.skip=true -Pidea'
 
 alias plt='$SCRIPT_HOME/pl_test.sh'
 
