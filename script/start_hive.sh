@@ -32,7 +32,7 @@ else
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/inceptor
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-core
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-holodesk
-  CLASSPATH+=:$NGMR_HOME/streaming/target/spark-streaming_2.10-1.1.0-transwarp.jar
+  CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/spark-streaming
   CLASSPATH+=:$INCEPTOR_HOME/idea/out/production/hive
   paths=(
   $NGMR_SHELL_HOME/target/lib-idea
