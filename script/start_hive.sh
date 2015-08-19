@@ -15,7 +15,7 @@ fi
 CLASSPATH=$CLASSPATH:$INCEPTOR_HOME/conf
 
 # Whether IDE compiled classes are newer or command line built jars are.
-ide_newer=`find $INCEPTOR_HOME/idea/out/production -newer $NGMR_SHELL_HOME/target/inceptor_2.10-1.1.0-transwarp.jar`
+ide_newer=`find $INCEPTOR_HOME/idea/out/production -newer $NGMR_SHELL_HOME/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar`
 
 if [ x"$ide_newer" = x"" ]; then
   # echo 'Command line built jars are newer.'
