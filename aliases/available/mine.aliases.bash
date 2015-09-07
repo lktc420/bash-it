@@ -11,7 +11,7 @@ elif [ $(uname) = "Linux" ]; then
     # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 fi
 export DEVROOT=$HOME_ABS/dev
-export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=1024m"
+export MAVEN_OPTS="-Xmx8192m -XX:MaxPermSize=1024m"
 export SCRIPT_HOME=$BASH_IT/script
 export SCALA_HOME=/usr/lib/scala-2.11.1
 export PATH=$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$HIVE_HOME/bin:/usr/lib/hadoop/bin:/usr/lib/hadoop-hdfs/bin:$PATH
