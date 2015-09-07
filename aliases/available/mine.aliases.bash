@@ -27,8 +27,8 @@ export SVN_ROOT=https://172.16.1.168/transwarp
 export BRANCH=$SVN_ROOT/sbranches/ruoxi
 export TRUNK=$SVN_ROOT/trunk/hadoop/sources
 
-export HIVE_BRANCH=$BRANCH/warp-3671-hive-2
-export NGMR_BRANCH=$BRANCH/warp-3671-ngmr-2
+export HIVE_BRANCH=$BRANCH/warp-3671-hive-3
+export NGMR_BRANCH=$BRANCH/warp-3671-ngmr-3
 
 export HIVE_TRUNK=$TRUNK/hive-0.12.0-transwarp
 export NGMR_TRUNK=$TRUNK/ngmr-1.7-transwarp
