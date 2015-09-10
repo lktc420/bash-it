@@ -41,8 +41,11 @@ alias sudo='sudo -E '
 # Scripts
 alias smst='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.metastore.HiveMetaStore &'
 alias scldr='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N'
-alias sisv='$SCRIPT_HOME/start_hive.sh io.transwarp.ngmr.NgmrServer &'
+alias shsv='$SCRIPT_HOME/start_hive.sh io.transwarp.ngmr.NgmrServer &'
+alias srcldr='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N -h localhost'
 alias sbl='$SCRIPT_HOME/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive://localhost:10000/default'
+alias shsv2='$SCRIPT_HOME/start_hive.sh io.transwarp.inceptor.InceptorServer2 &'
+alias sbl2='$SCRIPT_HOME/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive2://localhost:10000/default -n zhu -p 123456'
 alias sall='$SCRIPT_HOME/start_all.sh'
 
 alias scpinst='$SCRIPT_HOME/scp_install.sh'
