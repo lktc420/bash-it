@@ -5,16 +5,18 @@
 if [ $(uname) = "Darwin" ]; then
   export HOME_ABS=/Users/zanmato
   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
+  export MAVEN_HOME=/opt/apache-maven-3.3.3
 elif [ $(uname) = "Linux" ]; then
   export HOME_ABS=/home/ruoxi
   export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+  export MAVEN_HOME=/opt/apache-maven-3.3.3
     # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 fi
 export DEVROOT=$HOME_ABS/dev
 export MAVEN_OPTS="-Xmx8192m -XX:MaxPermSize=1024m"
 export SCRIPT_HOME=$BASH_IT/script
 export SCALA_HOME=/usr/lib/scala-2.11.1
-export PATH=$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$HIVE_HOME/bin:/usr/lib/hadoop/bin:/usr/lib/hadoop-hdfs/bin:$PATH
+export PATH=$JAVA_HOME:$JAVA_HOME/bin:$SCALA_HOME/bin:$MAVEN_HOME/bin:$PATH
 export HADOOP_HOME=/usr/lib/hadoop
 export HADOOP_LIBEXEC_DIR=$HADOOP_HOME/libexec
 export HIVE_HOME=/usr/lib/hive
