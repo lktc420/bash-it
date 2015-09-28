@@ -43,6 +43,7 @@ export GIT_EDITOR='vi'
 alias sudo='sudo -E '
 
 # Scripts
+alias rfricpt='touch $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar'
 alias smst='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.metastore.HiveMetaStore &'
 alias scldr='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N'
 alias shsv='$SCRIPT_HOME/start_hive.sh io.transwarp.ngmr.NgmrServer &'
