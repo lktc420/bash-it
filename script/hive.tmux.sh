@@ -28,6 +28,6 @@ tmux send-keys 'gdev; cd inceptor' 'C-m'
 tmux new-window -n precheck
 tmux send-keys 'gdev; cd precheck' 'C-m'
 
-tmux select-window -t 0
-tmux select-pane -t 0
+tmux select-window -t 1
+tmux select-pane -t 1
 tmux -2 a -t hive
