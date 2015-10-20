@@ -83,11 +83,11 @@ alias clhv='rm -rf ~/.m2/repository/org/apache/hive ~/.ivy2/local/org.apache.hiv
 alias clspk='rm -rf ~/.m2/repository/org/apache/spark ~/.ivy2/local/org.apache.spark ~/.ivy2/cache/org.apache.spark'
 
 alias rbdgrm='mvn clean org.antlr:antlr3-maven-plugin:3.4:antlr 2>&1 | tee ../grammar.log'
-alias bdhv='mvn install -DskipTests=true -Pidea'
-alias rbdhv='mvn clean install -DskipTests=true -Pidea'
+alias bdhv='mvn install -DskipTests -Pidea'
+alias rbdhv='mvn clean install -DskipTests -Pidea'
 
-alias bdspk='mvn install -DskipTests=true -Pyarn -Pidea'
-alias rbdspk='mvn clean install -DskipTests=true -Pyarn -Pidea'
+alias bdspk='mvn install -DskipTests -Pyarn -Pidea'
+alias rbdspk='mvn clean install -DskipTests -Pyarn -Pidea'
 
 alias bdicpt='mvn install -Dmaven.test.skip=true -Pidea'
 alias rbdicpt='mvn clean install -Dmaven.test.skip=true -Pidea'
