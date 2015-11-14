@@ -12,7 +12,7 @@ elif [ $(uname) = "Linux" ]; then
   export MAVEN_HOME=/opt/apache-maven-3.3.3
     # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 fi
-export DEVROOT=$HOME_ABS/dev
+export DEVROOT=$HOME_ABS/.devroot
 export MAVEN_OPTS="-Xmx8192m -XX:MaxPermSize=1024m"
 export SCRIPT_HOME=$BASH_IT/script
 export SCALA_HOME=/usr/lib/scala-2.11.1
@@ -29,8 +29,8 @@ export SVN_ROOT=https://172.16.1.168/transwarp
 export BRANCH=$SVN_ROOT/sbranches/ruoxi
 export TRUNK=$SVN_ROOT/trunk/hadoop/sources
 
-export HIVE_BRANCH=$BRANCH/warp-4026-hive
-export NGMR_BRANCH=$BRANCH/warp-4026-ngmr
+export HIVE_BRANCH=$BRANCH/warp-3671-hive
+export NGMR_BRANCH=$BRANCH/warp-3671-ngmr
 # export HIVE_BRANCH=$BRANCH/warp-3671-hive-3
 # export NGMR_BRANCH=$BRANCH/warp-3671-ngmr-3
 

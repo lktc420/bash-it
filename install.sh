@@ -115,3 +115,5 @@ done
 ln -sf $BASH_IT/rc/vimrc $HOME/.ideavimrc
 
 sudo ln -sf $BASH_IT/script/transwarp /usr/bin/transwarp
+
+ln -sf $HOME_ABS/dev $HOME/.devroot

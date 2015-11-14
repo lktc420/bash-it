@@ -132,3 +132,12 @@ function warp ()
     export HIVE_BRANCH=$BRANCH/warp-$1-hive
     export NGMR_BRANCH=$BRANCH/warp-$1-ngmr
 }
+
+function devroot ()
+{
+    about 'switch the working devroot'
+    param '1: devroot path'
+    group 'mine'
+    rm $DEVROOT
+    ln -sf $1 $DEVROOT
+}
