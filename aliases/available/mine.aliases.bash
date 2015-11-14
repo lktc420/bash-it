@@ -22,6 +22,7 @@ export HADOOP_LIBEXEC_DIR=$HADOOP_HOME/libexec
 export HIVE_HOME=/usr/lib/hive
 export HIVEROOT=hive-0.12.0-transwarp
 export NGMRROOT=ngmr-1.7-transwarp
+export INCEPTORIDEAROOT=inceptor_idea
 export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export POOIQWRKNV_JKLJFWPEO_DFQQWE_LBIERPL_MDCJKD_NOT_RECOMMANDED=true
 
@@ -44,13 +45,14 @@ alias sudo='sudo -E '
 
 # Scripts
 alias rfricpt='touch $DEVROOT/$NGMRROOT/inceptor/target/scala-2.10/inceptor_2.10-1.1.0-transwarp.jar'
-alias smst='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.metastore.HiveMetaStore &'
-alias scldr='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N'
-alias shsv='$SCRIPT_HOME/start_hive.sh io.transwarp.ngmr.NgmrServer &'
-alias srcldr='$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N -h localhost'
-alias sbl='$SCRIPT_HOME/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive://localhost:10000/default'
-alias shsv2='$SCRIPT_HOME/start_hive.sh io.transwarp.inceptor.InceptorServer2 &'
-alias sbl2='$SCRIPT_HOME/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive2://localhost:10000/default -n zhu -p 123456'
+alias smst='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hadoop.hive.metastore.HiveMetaStore &'
+alias scldr='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N'
+alias shsv='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh io.transwarp.ngmr.NgmrServer &'
+alias srcldr='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N -h localhost'
+alias sbl='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive://localhost:10000/default'
+alias shsv2='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh io.transwarp.inceptor.InceptorServer2 &'
+alias sbl2='$DEVROOT/$INCEPTORIDEAROOT/bin/start_hive.sh org.apache.hive.beeline.BeeLine -u jdbc:hive2://localhost:10000/default -n zhu -p 123456'
+
 alias sall='$SCRIPT_HOME/start_all.sh'
 
 alias scpinst='$SCRIPT_HOME/scp_install.sh'
