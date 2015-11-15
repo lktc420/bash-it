@@ -5,6 +5,12 @@ tmux send-keys 'ghv' 'C-m'
 
 tmux new-window -n ngmr
 tmux send-keys 'gngmr' 'C-m' 'cd spark' 'C-m'
+tmux split-window -h
+tmux send-keys 'gngmr' 'C-m' 'cd idbc' 'C-m'
+tmux select-pane -t 1
+tmux split-window -v
+tmux send-keys 'gngmr' 'C-m'
+tmux select-pane -t 3
 tmux split-window -v
 tmux send-keys 'gngmr' 'C-m' 'cd inceptor' 'C-m'
 
@@ -14,7 +20,7 @@ tmux split-window -v
 tmux new-window -n sql
 tmux send-keys 'ghv' 'C-m' 'cd sqlUnitTest' 'C-m'
 tmux split-window -v
-tmux send-keys 'gdev; cd inceptor/sql' 'C-m'
+tmux send-keys 'gdev; cd inceptor_idea/sql' 'C-m'
 
 tmux new-window -n mysql
 tmux send-keys 'msql' 'C-m'
