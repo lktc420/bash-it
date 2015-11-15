@@ -91,6 +91,9 @@ alias rbdhv='mvn clean install -DskipTests -Pidea'
 alias bdspk='mvn install -DskipTests -Pyarn -Pidea'
 alias rbdspk='mvn clean install -DskipTests -Pyarn -Pidea'
 
+alias bdidbc='mvn install -DskipTests -Pidea'
+alias rbdidbc='mvn clean install -DskipTests -Pidea'
+
 alias bdicpt='mvn install -Dmaven.test.skip=true -Pidea'
 alias rbdicpt='mvn clean install -Dmaven.test.skip=true -Pidea'
 
