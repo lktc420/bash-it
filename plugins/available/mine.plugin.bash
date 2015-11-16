@@ -101,7 +101,7 @@ function sce ()
 {
     about 'copy full path of e.sql to select'
     group 'mine'
-    sfp $DEVROOT/inceptor/sql/e.sql
+    sfp $DEVROOT/inceptor_idea/sql/e.sql
 }
 
 function ccf ()
@@ -110,8 +110,8 @@ function ccf ()
     param '1: file name'
     group 'mine'
     cfp $*
-    echo "source `clippst`" > $DEVROOT/inceptor/sql/f.sql
-    echo "`clippst` sourced to $DEVROOT/inceptor/sql/f.sql"
+    echo "source `clippst`" > $DEVROOT/inceptor_idea/sql/f.sql
+    echo "`clippst` sourced to $DEVROOT/inceptor_idea/sql/f.sql"
 }
 
 function scf ()
@@ -120,8 +120,8 @@ function scf ()
     param '1: file name'
     group 'mine'
     sfp $*
-    echo "source `selpst`" > $DEVROOT/inceptor/sql/f.sql
-    echo "`selpst` sourced to $DEVROOT/inceptor/sql/f.sql"
+    echo "source `selpst`" > $DEVROOT/inceptor_idea/sql/f.sql
+    echo "`selpst` sourced to $DEVROOT/inceptor_idea/sql/f.sql"
 }
 
 function warp ()
