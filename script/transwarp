@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$SCRIPT_HOME/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N $@
+$DEVROOT/inceptor_idea/bin/start_hive.sh org.apache.hadoop.hive.cli.CliDriver -N $@
