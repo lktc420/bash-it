@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PL_TEST_ROOT=$DEVROOT/$HIVEROOT/src/sqlUnitTest/pl
+PL_TEST_ROOT=$DEVROOT/$HIVEROOT/src/sqlUnitTest/pl/oracle
 
 if [ $# = 0 ];then
   TEST_DIRS=`cat $PL_TEST_ROOT/test_list.txt`
