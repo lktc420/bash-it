@@ -97,7 +97,7 @@ alias rbdidbc='mvn clean install -DskipTests -Pidea'
 alias bdicpt='mvn install -Dmaven.test.skip=true -Pidea'
 alias rbdicpt='mvn clean install -Dmaven.test.skip=true -Pidea'
 
-alias plt='$SCRIPT_HOME/pl_test.sh'
+alias plt='$SCRIPT_HOME/plt.sh'
 
 alias insthv='rm -rf $DEVROOT/precheck/jar/hive/*; cp `find $DEVROOT/$HIVEROOT/src -name "hive*jar" | grep -v "tests.jar"` $DEVROOT/precheck/jar/hive/'
 alias instspk='rm -rf $DEVROOT/precheck/jar/spark/*; cp $DEVROOT/$NGMRROOT/spark/core/target/scala-2.10/spark-core_2.10-1.1.0-transwarp.jar $DEVROOT/precheck/jar/spark/ngmr-core_2.10-1.1.0-transwarp.jar; cp $DEVROOT/$NGMRROOT/spark/holodesk/target/scala-2.10/spark-holodesk_2.10-1.1.0-transwarp.jar $DEVROOT/precheck/jar/spark/ngmr-holodesk_2.10-1.1.0-transwarp.jar'
